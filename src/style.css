@@ -1,0 +1,85 @@
+.main-container {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.keybord {
+  display: grid;
+  grid-template-columns: repeat(60, 15px);
+  grid-template-rows: repeat(5, 60px);
+  position: relative;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  column-gap: 1px;
+  row-gap: 3px;
+  border-radius: 14px;
+  justify-content: space-between;
+}
+
+.key {
+  width: auto;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #24aed8;
+  border: 1px #145b70;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000;
+  grid-column: span 4;
+  transition: 0.5s ease-in-out;
+}
+
+.key:hover {
+  background: rgba(56, 133, 185, 0.925);
+}
+
+.key[data-key='Backspace'] {
+  grid-column: span 7;
+}
+
+.key[data-key='Enter'],
+.key[data-key='ShiftLeft'],
+.key[data-key='Delete'] {
+  grid-column: span 6;
+}
+.key[data-key='ShiftRight'] {
+  grid-column: span 9;
+}
+.key[data-key='ControlLeft'],
+.key[data-key='MetaLeft'],
+.key[data-key='AltLeft'],
+.key[data-key='AltRight'],
+.key[data-key='Tab'],
+.key[data-key='ControlRight'],
+.key[data-key='CapsLock'] {
+  grid-column: span 5;
+}
+
+.key[data-key='Space'] {
+  grid-column: span 22;
+}
+
+.key.active {
+  transition: 0.5s ease-in-out;
+  border-radius: 12px;
+  box-shadow: 2px 0 5px #5052e0c9;
+  background: #506ae0;
+}
+
+.list {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.list__item{
+    list-style: none;
+    font-size: 30px;
+}
