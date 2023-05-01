@@ -322,16 +322,6 @@ document.addEventListener('keydown', (e) => {
     updateKeyboard(upperCase, language);
     return;
   }
-  if ((altOn && (key.dataset.key !== 'ControlLeft' && key.dataset.key !== 'ControlRight')) || (ctrlOn && (key.dataset.key !== 'AltRight' || key.dataset.key !== 'AltLeft'))) {
-    altOn = false;
-    ctrlOn = false;
-    list.forEach((item) => {
-      if (item.dataset.key === 'CapsLock' || item.dataset.key === 'ShiftLeft' || key.dataset.key === 'ShiftRight') {
-        return;
-      }
-      item.classList.remove('active');
-    });
-  }
   key.classList.add('active');
 
   if (key.dataset.key === 'ShiftLeft' || key.dataset.key === 'ShiftRight') {
@@ -454,12 +444,6 @@ document.addEventListener('keydown', (e) => {
       language = language === 'en' ? 'ru' : 'en';
       updateKeyboard(upperCase, language);
       localStorage.setItem('leng', language);
-      list.forEach((item) => {
-        if (item.dataset.key === 'CapsLock' || item.dataset.key === 'ShiftLeft' || key.dataset.key === 'ShiftRight') {
-          return;
-        }
-        item.classList.remove('active');
-      });
     }
     return;
   }
@@ -469,12 +453,6 @@ document.addEventListener('keydown', (e) => {
       language = language === 'en' ? 'ru' : 'en';
       localStorage.setItem('leng', language);
       updateKeyboard(upperCase, language);
-      list.forEach((item) => {
-        if (item.dataset.key === 'CapsLock' || item.dataset.key === 'ShiftLeft' || key.dataset.key === 'ShiftRight') {
-          return;
-        }
-        item.classList.remove('active');
-      });
     }
     return;
   }
